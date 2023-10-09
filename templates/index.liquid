@@ -5,6 +5,25 @@
   style="display: none;">{{ lang }}
 </p>
 
+<section class="hero_2" style="overflow: hidden;">
+  <div class="container hero_2">
+    <div class="heroImgWRAP left"></div>
+    <div class="heroCenterWRAP">
+      <div class="heroCenterTitleWRAP">
+        <h5 class="heading_homeHero">{{ "home.topTitle_hero" | t }}</h5>
+        <h1 class="title_homeHero">{{ "home.title_hero_upper" | t }}<br>{{ "home.title_hero_lower" | t }}</h1>
+      </div>
+      <div class="heroCenterImgWRAP">
+        <img src="{{ 'mainHeroIMG.png' | asset_url }}" alt="" class="heroCenterIMG">
+      </div>
+      <div class="heroCenterBtnWRAP">
+        <a class="btn hero" style="color: red !important" href="{{ collections['badmintono-prekes'].url }}" >{{ "home.btnText_heroMain" | t }}</a>
+        <div class="btn inverted hero" data-hover_grey >{{ "home.btnText_heroSecond" | t }}</div>
+      </div>
+    </div>
+    <div class="heroImgWRAP left"></div>
+  </div>
+</section>
 
 
 <section class="hero" style="overflow: hidden;">
@@ -13,15 +32,20 @@
       <h5 class="heading_homeHero">{{ "home.topTitle_hero" | t }}</h5>
       <h1 class="title_homeHero">{{ "home.title_hero_upper" | t }}<br>{{ "home.title_hero_lower" | t }}</h1>
       <div class="btnWrap_hero">
-        <a class="btn hero" href="{{ collections['badmintono-prekes'].url }}" >{{ "home.btnText_heroMain" | t }}</a>
+        <a class="btn hero" style="color: red !important" href="{{ collections['badmintono-prekes'].url }}" >{{ "home.btnText_heroMain" | t }}</a>
         <div class="btn inverted hero" data-hover_grey >{{ "home.btnText_heroSecond" | t }}</div>
       </div>
     </div>
     <img class="img_Hero" src="{{ 'img_hero.png' | asset_url }}" alt="">
   </div>
   <div class="img_heroFade"></div>
-  <img class="img_heroWave" src="{{ 'img_waveHero.svg' | asset_url }}" alt="">
+  
 </section>
+
+
+
+
+
 <div class="home_fade"></div>
 {% render 'inline_slider' %}
 <div class="home_fade up"></div>
