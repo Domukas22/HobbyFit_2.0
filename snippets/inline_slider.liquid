@@ -37,7 +37,7 @@
                 <img
                   class="img_product_filterPage"
                   src="{{ product.featured_image | img_url: '600x600' }}"
-                  alt="{{ product.featured_image.alt | escape }}">
+                  alt="{{ product.title }}{{ product.featured_image.alt | escape }}">
                 <img
                   class="img_wave"
                   src="{{ 'img_WAVE_filterPage.svg' | asset_url }}"

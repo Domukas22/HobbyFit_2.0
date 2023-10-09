@@ -39,7 +39,7 @@
                   {% if size_option %}/ {{ size_option.value }}{% endif %}
                 </p>
               </div> 
-              <img class="cartItemIMAGE" src="{{ (item.variant.featured_image | default: item.product.featured_image) | img_url: '500x500' }}" alt="{{ item.product.featured_image.alt }}">
+              <img class="cartItemIMAGE" src="{{ (item.variant.featured_image | default: item.product.featured_image) | img_url: '500x500' }}" alt="{{ item.product.title }}{{ item.product.featured_image.alt }}">
               <img class="cartItemWaveIMG" src="{{ 'img_WAVE_cartItem.svg' | asset_url }}" alt="Colorful wave" style="background-color: {{ bgCOLOR }}">
               <div class="clickOVERLAY variantURL" data-variantid="{{ item.variant.id }}" data-rawcolor="{{ rawCOLOR }}" data-bgcolor="{{ bgCOLOR }}" data-varianturl="{{ shop.url }}{{ item.product.url }}"></div>
             </div>
@@ -56,7 +56,7 @@
                       <p class="totalVariantPRICE" style="color: {{ rawCOLOR }}; font-size: 17px" data-variantid="{{ item.variant.id }}" data-price_for_one="{{ item.price }}">{{ item.final_line_price | money }}</p>
                   </div>
                   <a class="deleteItemBTN" href="{{ item.url_to_remove }}">
-                    <img src="{{ 'icon_delete_red.svg' | asset_url }}" alt="">
+                    <img src="{{ 'icon_delete_red.svg' | asset_url }}" alt="Garbage bin icon">
                     <div class="clickOVERLAY"></div>
                   </a>
                 </div>
@@ -131,7 +131,7 @@
                 <img
                   class="icon_checkmark"
                   src="{{ 'icon_checkmark.svg' | asset_url }}"
-                  alt="">
+                  alt="Green checkmark icon">
                 <p>{{ "cart.freeShipping_yes" | t }}</p>
               </div>
               <div class="shippingALERT paid">
@@ -157,7 +157,7 @@
 
                 <div class="itemPreview" data-variantid="{{ item.variant.id }}" >
                   <div class="imgWarp_itemPreview">
-                    <img src="{{ (item.variant.featured_image | default: item.product.featured_image) | img_url: '500x500' }}" alt="{{ item.product.featured_image.alt }}" class="img_cartPreview">
+                    <img src="{{ (item.variant.featured_image | default: item.product.featured_image) | img_url: '500x500' }}" alt="{{ item.product.title }}{{ item.product.featured_image.alt }}" class="img_cartPreview">
                   </div>
 
                   <div class="wrap_previewFeatures">
@@ -248,7 +248,7 @@
           </div>
         {% else %}
           <div class="empty_cart_sign">
-            <img class="icon_empty_cart" src="{{ "icon_bag.svg" | asset_url }}" alt="Empty shopping cart">
+            <img class="icon_empty_cart" src="{{ "icon_bag.svg" | asset_url }}" alt="Shopping bag icon">
             <p>{{ "cart.empty" | t }}</p>
           </div>
         {% endif %}

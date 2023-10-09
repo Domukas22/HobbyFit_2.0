@@ -252,7 +252,7 @@
         <div class="separator"></div>
         
         <p style="margin: 16px 0; display: flex; align-items: center">
-          <span><img src="{{ 'icon_truck.png' | asset_url }}" alt="" class="icon_otherInfo"></span>{{ "product.text_shippingDuration_pre" | t }} 2 {{ "product.text_shippingDuration_post" | t }}
+          <span><img src="{{ 'icon_truck.png' | asset_url }}" alt="Delivery truck icon" class="icon_otherInfo"></span>{{ "product.text_shippingDuration_pre" | t }} 2 {{ "product.text_shippingDuration_post" | t }}
         </p> 
 
         {% if product.metafields.reviews.rating.value | plus: 0 > 0  %}
@@ -281,24 +281,15 @@
         -->
         <div class="wrap_otherInfo" >
           <div class="otherInfo">
-            <img
-              src="{{ 'icon_truck.png' | asset_url }}"
-              alt=""
-              class="icon_otherInfo">
+            <img src="{{ 'icon_truck.png' | asset_url }}" alt="Delivery truck icon" class="icon_otherInfo">
             <p>{{ "product.text_freeShipping" | t }}</p>
           </div>
           <div class="otherInfo">
-            <img
-              src="{{ 'icon_return.png' | asset_url }}"
-              alt=""
-              class="icon_otherInfo">
+            <img src="{{ 'icon_return.png' | asset_url }}" alt="Product refund icon" class="icon_otherInfo">
             <p>{{ "product.text_return" | t }}</p>
           </div>
           <div class="otherInfo">
-            <img
-              src="{{ 'icon_phone.png' | asset_url }}"
-              alt=""
-              class="icon_otherInfo">
+            <img src="{{ 'icon_phone.png' | asset_url }}" alt="Telephone icon" class="icon_otherInfo">
             <p>{{ "product.text_contact" | t }}</p>
           </div>
         </div>
@@ -627,9 +618,10 @@ const IMG = (() => {
   
     // get ulr + alt from all images
     {% for image in product.images %}
-      imgInfoLIST.push({src: '{{ image | img_url: 'master' | prepend: 'https:'}}', alt: '{{ image.alt }}' })
+      imgInfoLIST.push({src: '{{ image | img_url: '1200x1200' | prepend: 'https:'}}', alt: '{{ image.alt }}' })
     {% endfor %};
-  
+    // img_url: 'master'  ==> original size
+    
     // create and push the img into imageELEMENTS
     for (let imgNR = 0; imgNR < imgInfoLIST.length; imgNR++) {
       imageELEMENTS.push(_CREATEimage(imgInfoLIST[imgNR]))
@@ -681,6 +673,7 @@ const SWIPER = (() => {
     wave.setAttribute('style', `background-color: ${bgCOLOR}`);
     wave.setAttribute('data-swiper-parallax', "-13%");
     wave.setAttribute('data-recolor_bg', ``);
+    wave.setAttribute('alt', `Colorful wave`);
     return wave;
   }
   function _CREATEswiper(){
@@ -703,7 +696,9 @@ const SWIPER = (() => {
     swiperSLIDE.classList.add('swiper-slide');
     img.classList.add('imgSwiper');
     img.setAttribute('draggable', 'false');
+    img.setAttribute('alt', '{{ product.title }}' + img.getAttribute('alt'));
     swiperSLIDE.append(img);
+
     return swiperSLIDE;
   }
   

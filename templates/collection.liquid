@@ -31,7 +31,7 @@
     -->
     <div class="filter" data-filter="ball" data-hover_grey >
       <div class="click_overlay"></div>
-      <img class="icon_filter" src="{{ 'icon_filter_ball.png' | asset_url }}" alt="">
+      <img class="icon_filter" src="{{ 'icon_filter_ball.png' | asset_url }}" alt="Badminton shuttlecock">
       <p>{{ "filters_badminton.balls" | t }}</p>
     </div>
     <!-- 
@@ -48,9 +48,9 @@
     --> 
   </div>
   <div class="btn_openFilters" data-toggle="filters" >
-    <img class="icon_filter hide" id="icon_currentFilter" src="{{ 'icon_filter_racket.png' | asset_url }}" alt="">
+    <img class="icon_filter hide" id="icon_currentFilter" src="{{ 'icon_filter_racket.png' | asset_url }}" alt="Currently active filter icon">
     <p class="text_currentFilter">{{ "filters_badminton.all" | t }}</p>
-    <img class="icon_arrowDropdown" src="{{ 'icon_arrow.svg' | asset_url }}" alt="">
+    <img class="icon_arrowDropdown" src="{{ 'icon_arrow.svg' | asset_url }}" alt="Grey arrow pointing down">
   </div>
 </section>
 <div class="section_itemCount">
@@ -68,7 +68,7 @@
       {% if product.available %}
         <a href="{{ product.url }}" class="product" data-filter_word="{{ product.metafields.custom.filter_word}}" data-sale="{{ product.metafields.custom.sale}}">
           <div class="product_TOP">
-            <img class="img_product_filterPage" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.featured_image.alt | escape }}">
+            <img class="img_product_filterPage" src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}{{ product.featured_image.alt | escape }}">
             <img class="img_wave" src="{{ 'img_WAVE_filterPage.svg' | asset_url }}" alt="Colorful wave" data-color_bg="{{ product.metafields.custom.color_bg}}">
             <p class="textIcon_sale" data-isSale="{{ product.metafields.custom.sale}}">
               {% assign a = product.compare_at_price_max | divided_by: 1.0 %}
@@ -140,7 +140,7 @@
   -->
   <div class="filter" data-filter="ball" >
     <div class="click_overlay"></div>
-    <img class="icon_filter" src="{{ 'icon_filter_ball.png' | asset_url }}" alt="">
+    <img class="icon_filter" src="{{ 'icon_filter_ball.png' | asset_url }}" alt="Badminton shuttlecock">
     <p>{{ "filters_badminton.balls" | t }}</p>
     <p class="category_item_count" data-category_count="ball">2</p>
   </div>
