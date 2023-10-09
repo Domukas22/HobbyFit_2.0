@@ -7,43 +7,39 @@
 
 <section class="hero_2" style="overflow: hidden;">
   <div class="container hero_2">
-    <div class="heroImgWRAP left"></div>
+    <div class="heroSideImgWRAP left">
+      <img class="sideHeroIMG left" src="{{ 'leftHeroIMG.png' | asset_url }}" alt="" srcset="">
+    </div>
     <div class="heroCenterWRAP">
       <div class="heroCenterTitleWRAP">
-        <h5 class="heading_homeHero">{{ "home.topTitle_hero" | t }}</h5>
-        <h1 class="title_homeHero">{{ "home.title_hero_upper" | t }}<br>{{ "home.title_hero_lower" | t }}</h1>
+        <h5 class="homeHeroHEADING">{{ "home.topTitle_hero" | t }}</h5>
+        <h1>{{ "home.title_hero_upper" | t }}<br>{{ "home.title_hero_lower" | t }}</h1>
       </div>
       <div class="heroCenterImgWRAP">
-        <img src="{{ 'mainHeroIMG.png' | asset_url }}" alt="" class="heroCenterIMG">
+        <img class="heroCenterIMG" src="{{ 'mainHeroIMG.png' | asset_url }}" alt="" >
+        <img class="heroWaveIMG" src="{{ 'homeHeroWAVE.svg' | asset_url }}" alt="" >
       </div>
       <div class="heroCenterBtnWRAP">
-        <a class="btn hero" style="color: red !important" href="{{ collections['badmintono-prekes'].url }}" >{{ "home.btnText_heroMain" | t }}</a>
+        <a class="btn hero"  href="{{ collections['badmintono-prekes'].url }}" >{{ "home.btnText_heroMain" | t }}</a>
         <div class="btn inverted hero" data-hover_grey >{{ "home.btnText_heroSecond" | t }}</div>
       </div>
     </div>
-    <div class="heroImgWRAP left"></div>
-  </div>
-</section>
-
-
-<section class="hero" style="overflow: hidden;">
-  <div class="container hero">
-    <div class="textWrap_heroHome">
-      <h5 class="heading_homeHero">{{ "home.topTitle_hero" | t }}</h5>
-      <h1 class="title_homeHero">{{ "home.title_hero_upper" | t }}<br>{{ "home.title_hero_lower" | t }}</h1>
-      <div class="btnWrap_hero">
-        <a class="btn hero" style="color: red !important" href="{{ collections['badmintono-prekes'].url }}" >{{ "home.btnText_heroMain" | t }}</a>
-        <div class="btn inverted hero" data-hover_grey >{{ "home.btnText_heroSecond" | t }}</div>
-      </div>
+    <div class="heroSideImgWRAP left">
+      <img class="sideHeroIMG right" src="{{ 'rightHeroIMG.png' | asset_url }}" alt="" srcset="">
     </div>
-    <img class="img_Hero" src="{{ 'img_hero.png' | asset_url }}" alt="">
   </div>
-  <div class="img_heroFade"></div>
-  
+  <div href="" class="arrowBoxWRAP">
+      <div class="arrowBOX">
+        <div class="arrowLINE right"></div>
+        <div class="arrowLINE left"></div>
+      </div>
+      <div class="arrowBOX">
+        <div class="arrowLINE right"></div>
+        <div class="arrowLINE left"></div>
+      </div>
+  </div>
+  <div class="heroFADE"></div>
 </section>
-
-
-
 
 
 <div class="home_fade"></div>
@@ -158,13 +154,12 @@
     return { SCROLLtoSlider }
   })();
 
-
-  console.log('sssssssssss')
+  const heroArrowWRAP = document.querySelector('.arrowBoxWRAP');
+  const heroSliderBTN = document.querySelector('.btn.inverted.hero');
+  heroArrowWRAP.addEventListener('click', () => { EFFECTS.SCROLLtoSlider() })
+  heroSliderBTN.addEventListener('click', () => { EFFECTS.SCROLLtoSlider() })
 
   
-
-  const heroSliderBTN = document.querySelector('.btn.inverted.hero');
-  heroSliderBTN.addEventListener('click', () => { EFFECTS.SCROLLtoSlider() })
 </script>
 
 

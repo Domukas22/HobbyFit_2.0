@@ -97,9 +97,8 @@ nav[data-shadowVisible="false"] {
 }
 .icon_Nav {
   margin-right: 10px;
-  width: 21;
-  min-width: 21px;
-  object-fit: cover;
+  width: 20px;
+  object-fit: contain;
 }
 
 
@@ -170,6 +169,7 @@ nav[data-shadowVisible="false"] {
 }
 .icon_Nav.bag {
   margin: 0 4px 2px 0;
+  width: 16px;
   filter: saturate(0%);
   user-select: none;
 }
