@@ -252,7 +252,7 @@
         <div class="separator"></div>
         
         <p style="margin: 16px 0; display: flex; align-items: center">
-          <span><img src="{{ 'icon_shipping.png' | asset_url }}" alt="" class="icon_otherInfo"></span>{{ "product.text_shippingDuration_pre" | t }} 2 {{ "product.text_shippingDuration_post" | t }}
+          <span><img src="{{ 'icon_truck.png' | asset_url }}" alt="" class="icon_otherInfo"></span>{{ "product.text_shippingDuration_pre" | t }} 2 {{ "product.text_shippingDuration_post" | t }}
         </p> 
 
         {% if product.metafields.reviews.rating.value | plus: 0 > 0  %}
@@ -282,7 +282,7 @@
         <div class="wrap_otherInfo" >
           <div class="otherInfo">
             <img
-              src="{{ 'icon_shipping.png' | asset_url }}"
+              src="{{ 'icon_truck.png' | asset_url }}"
               alt=""
               class="icon_otherInfo">
             <p>{{ "product.text_freeShipping" | t }}</p>
@@ -614,7 +614,14 @@ const ZOOM = (() => {
   return { SETdesktopImgDrag, TOGGLEzoom }
 })();
 const IMG = (() => {
+
+  const productIMAGES = _CREATEproductImages()
+
   function GETproductImages() {
+    return productIMAGES
+  }
+
+  function _CREATEproductImages() {
     const imageELEMENTS = [];
     let imgInfoLIST = [];
   
